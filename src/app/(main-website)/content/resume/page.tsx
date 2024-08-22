@@ -1,8 +1,9 @@
+import { Container } from "@mui/material";
 import Link from "next/link";
 
 export default function Page() {
   return  (
-  <>
+  <Container>
   
     <h1 style={{color: "green"}}>RESUME</h1>
     <h2>Name:Weerachai Nonsiri<br /> 
@@ -19,6 +20,6 @@ export default function Page() {
     {' '}<br></br>
     <Link href="../abount">Go to About</Link><br/>
     <Link href="../dashboard">Dashboard</Link>
-    </>
+    </Container>
     );
 }

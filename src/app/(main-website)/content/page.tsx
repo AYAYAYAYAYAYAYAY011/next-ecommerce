@@ -1,7 +1,8 @@
+import { Container } from "@mui/material";
 
 export default function Page() { 
     return (
-        <>
+        <Container>
             <div style={{ textAlign: "center" }}>
             <h2>Name:Weerachai Nonsiri<br /> 
             Age: 20<br /> 
@@ -15,6 +16,6 @@ export default function Page() {
              </h2> 
              
             </div>
-        </>
+        </Container>
     );
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { Container } from "@mui/material";
 import Link from "next/link";
 
 type AppLogoProps = {
@@ -16,7 +17,7 @@ export default function AppLogo({title,c}:AppLogoProps) {
     alert("Click Me!")
    }
   return (
-   <>
+   <Container>
       <p style={{color: c}} >{title}</p>
       <button onClick={onHandleClick}>Click me</button> {' '}
       <small>{subTitle.toUpperCase()}</small>
@@ -29,6 +30,6 @@ export default function AppLogo({title,c}:AppLogoProps) {
         isShowDate ? <small>{dateNow.toLocaleDateString()}</small>:<small>{timeNow}</small>
       }
       
-     </>
+     </Container>
   );
 }
