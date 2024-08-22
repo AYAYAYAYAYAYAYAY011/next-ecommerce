@@ -17,7 +17,8 @@ export default function Page() {
     </h2> 
     <Link href="../">Main Page</Link>
     {' '}<br></br>
-    <Link href="../abount">Go to About</Link>
+    <Link href="../abount">Go to About</Link><br/>
+    <Link href="../dashboard">Dashboard</Link>
     </>
     );
 }

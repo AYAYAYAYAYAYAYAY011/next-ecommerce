@@ -8,7 +8,8 @@ export default function Home(){
     <AppLogo title="Logo One" c="red"/>
     <AppLogo title="Logo Two" c="blue"/><br/>
     <Link href="../content/resume">Resume</Link><br/>
-    <Link href="../abount">Go to About</Link>
+    <Link href="../abount">Go to About</Link><br/>
+    <Link href="../dashboard">Dashboard</Link>
     </main>
   );
 }
