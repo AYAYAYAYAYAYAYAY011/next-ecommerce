@@ -19,6 +19,7 @@ export default function AppHeader() {
     <Container>
       <AppBar position="static" color="default" elevation={0} 
       sx={{borderBottom: (theme)=> `1px ${theme.palette.divider}` }}>
+        <Toolbar sx={{ flexWrap: "wrap"}}>
         <Typography variant="h6" color='inherit' noWrap sx={{flexGrow: 1}}
         >
           IT SUPHAN SHOP
@@ -63,6 +64,16 @@ export default function AppHeader() {
           >
             Product
           </Link>
+          <Link
+          underline={pathname == "/content/resume" ? 'always' : "none"}
+          component={NextLink}
+          variant="button" 
+          color="primary" 
+          href="/content/resume" 
+          replace sx={{my:1, mx: 1.5}}
+          >
+            Resume
+          </Link>
         </nav>
         <Button
         LinkComponent={NextLink}
@@ -71,7 +82,9 @@ export default function AppHeader() {
         sx={{my:1, mx:1.5}}
         >
         </Button>
+        </Toolbar>
       </AppBar>
     </Container>
+    
   );
 }
