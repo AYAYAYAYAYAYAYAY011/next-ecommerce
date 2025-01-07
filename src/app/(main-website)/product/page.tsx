@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,7 +7,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Container } from '@mui/material';
+import Image from "next/image";
+import { Container, Divider, Grid, Typography } from '@mui/material';
+import { getProduct } from './services/product-services';
+
 
 function createData(
   name: string,
@@ -26,10 +30,11 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function BasicTable() {
-  return (
+export default async function Homy(){
+  const response  = await getProduct()
+  return(
     <Container>
-    <TableContainer component={Paper}>
+      <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -44,8 +49,7 @@ export default function BasicTable() {
           {rows.map((row) => (
             <TableRow
               key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
@@ -58,6 +62,27 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+      <h1>Product</h1>
+      {
+        response.products && (
+          <>
+          <Grid container spacing={2}>
+            {
+              response.products.map((item: any) =>{
+                return(<Grid item key={item.id} lg={3} xs={6}>
+                  <Paper>
+                    <Image src={item.thumbnail} alt={item.detail} width={150} height={150} />
+                    <Divider/>
+                    <Typography>{item.title}</Typography>
+                  </Paper>
+                </Grid>)
+              })
+            }
+          </Grid>
+          </>
+        )
+      }
+
     </Container>
   );
 }
